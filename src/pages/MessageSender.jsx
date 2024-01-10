@@ -221,14 +221,16 @@ function Groups({ groups, setGroups, message, page, setPage, processing, setProc
     }
 }
  
+  const memoGroups = useMemo(() => { 
 
+   
   return (
     <div>
          {isDisabled && 
       <div className="fixed bg-gray-700 top-[30%] left-[45%]  w-44 h-20 flex justify-center items-center  rounded-2xl z-50">
-  <CountDown setIsDisabled={setIsDisabled}/>
+        <CountDown setIsDisabled={setIsDisabled}/>
       </div>
-   } 
+    }  
       <div className="grid grid-cols-2 gap-7">
         {groups?.map((elem, index) => (
           <SingleGroup key={index} elem={elem} index={index} message={message} setError={setError} setIsDisabled={setIsDisabled}  isDisabled={isDisabled}/>
@@ -252,6 +254,8 @@ function Groups({ groups, setGroups, message, page, setPage, processing, setProc
       )}
     </div>
   );
+  },[setIsDisabled,isDisabled,setGroups,groups,message,page,setPage])
+    return memoGroups
 }
 
 function SingleGroup({ elem, index,message,setError,isDisabled,setIsDisabled }) {
@@ -286,7 +290,6 @@ function SingleGroup({ elem, index,message,setError,isDisabled,setIsDisabled }) 
   return (
     <div
           className="flex justify-between items-center bg-[#3339b1] text-[#fff] p-2 rounded-lg flex-col">
-      
             <div className="flex justify-between items-center w-full">
               <h3 className="font-semibold">Group {index + 1}</h3>
         <button

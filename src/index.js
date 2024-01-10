@@ -7,8 +7,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom';
 // axios.defaults.baseURL = "http://node-sms-app-env.eba-cb46nstu.us-east-2.elasticbeanstalk.com/";
-axios.defaults.baseURL="http://enviroment-1.eba-pndezgkf.eu-west-2.elasticbeanstalk.com/"
-// axios.defaults.baseURL = "http://localhost:7000/";
+// axios.defaults.baseURL="http://enviroment-1.eba-pndezgkf.eu-west-2.elasticbeanstalk.com/"
+axios.defaults.baseURL = "http://localhost:7000/";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
